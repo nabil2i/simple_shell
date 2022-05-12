@@ -9,14 +9,15 @@
  */
 int main(int argc __attribute__((unused)), char **argv __attribute__((unused)))
 {
-	size_t buffersize = 2;
-	char *lineptr = NULL;
-	char **cmdtokens = NULL;
+	size_t buffersize = 32;
+	char *lineptr;
+	char **cmdtokens;
 	int interactivity, charactersread;
 
+	signal(SIGINT, SIG_IGN);
 	interactivity = isatty(STDIN_FILENO);
 
-	if(!intereactivity) /* uninteractive mode */
+	if(!interactivity) /* uninteractive mode */
 	{
 		while(getline(&lineptr, &buffersize, stdin) > 0)
 		{
@@ -33,7 +34,6 @@ int main(int argc __attribute__((unused)), char **argv __attribute__((unused)))
 		if (interactivity == 1)
 		{
 			write(1, "($) ", 4);
-			tokencount = 0;
 			charactersread = getline(&lineptr, &buffersize, stdin);
 			
 			if (charactersread < 0)
@@ -49,5 +49,5 @@ int main(int argc __attribute__((unused)), char **argv __attribute__((unused)))
 		}
 	
 	}
-
+	return (0);
 }
