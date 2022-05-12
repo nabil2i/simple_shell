@@ -32,7 +32,7 @@ int main(int argc __attribute__((unused)), char **argv __attribute__((unused)))
 	{
 		if (interactivity == 1)
 		{
-			write(1, "$ ", 2);
+			write(1, "($) ", 4);
 			tokencount = 0;
 			charactersread = getline(&lineptr, &buffersize, stdin);
 			
