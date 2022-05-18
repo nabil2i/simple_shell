@@ -1,21 +1,49 @@
 #ifndef MAIN_H
-#define MAINN_H
-
-/* HEADER FILES */
+#define MAIN_H
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <sys/wait.h>
 #include <string.h>
+#include <unistd.h>
+#include <sys/wait.h>
+#include <fcntl.h>
 #include <limits.h>
 #include <dirent.h>
 #include <stdarg.h>
 #include <errno.h>
-
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <errno.h>
+/**
+ * struct nodep - linked list of nodes
+ * @path: string content of node
+ * @next: pointer to next node
+ *
+ * Description: linked list of nodes used to get all PATH env variable routes
+ */
+typedef struct nodep
+{
+	char *path;
+	struct nodep *next;
+} nodep;
+char **tokenizer(char *, char *, char **);
+char *strconcat(char *, char *);
+char *_getenv(char *, char **);
+void get_path(char **, char **, char **);
+nodep *tokenLinked(char string[], char *separator);
+int chkBuiltin(char **, char **, char *);
+int chkPath(char **, char **);
+void execution(char **, char **);
+int _strlen(char *);
+char *_strdup(char *);
+int _strcmp(char *, char *);
+int _strncmp(char *, char *, unsigned int);
+void exitpls(void);
+void freezeLl(nodep *);
+/* **********************************
+ * **********************************
+ * **********************************
+ */
 /* ENVIRONMENT */
 
 extern char **environ;
@@ -56,6 +84,4 @@ int prdgt(va_list *args);
 void getdigits(int n);
 int _putchar(char c);
 void changedir(char **ar);
-
-#endif /* MAIN_H */
-
+#endif
