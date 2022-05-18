@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * _strcpy - copies str from src to dest
  * @src: source string
@@ -77,6 +78,7 @@ int searchpath(char *p, char **tokens)
 	while (p != NULL && reached != 1)
 	{
 		DIR *dr = opendir(p); /* opens current directory pointer */
+
 		if (dr == NULL)
 		{
 			/* not found */

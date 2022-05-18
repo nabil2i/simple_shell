@@ -1,88 +1,70 @@
-.TH simple_shell 1 "December 8, 2021" "1.0" "simple_shell General Commands Manual"
-
+.TH hsh_simple_shell  "May 18, 20218" "1.0" "simple_shell man page"
 .SH NAME
-.B simple_shell
-- standard command language interpreter
-
+.B hsh
+- simple shell command interpreter
 .SH SYNOPSIS
-
-.B simple_shell
-.RB [|options|]
-.RB [|file|]
-
+.b ./hsh
+[
+.I command
+]
+[
+.I options
+]
 .SH DESCRIPTION
+.B hsh
+is a command line interpreter created as a project for ALX. it\'s a simple version of the standard Linux shell. The program was created and compiled on
+.I Ubuntu 20.04 LTS
+Using
+.I GCC 9.4.0.
+.SH OPTIONS
 
-.B simple_shell
-The simple_shell utility is a command language interpreter that shall execute commands read from a command line string, the standard input, or a specified file. 
+.B cd - change directory
 
-.SH OPERANDS
+.P
+.B env - print evironment
 
-.TP
-The following operands shall be supported:
+.P
+.B exit - exit the shell
 
--                A single <hyphen-minus> shall be treated as the first
-                 operand and then ignored. If both '-' and "--" are
-                 given as arguments, or if other operands precede the
-                 single <hyphen-minus>, the results are undefined.
+.SH FILES
 
-.TP
+.B builtins - check to see if command is a built-in
 
-- argument: The positional parameters shall be set to arguments.
+.P
+.B execute - function to handle the execution of new processes
 
-.TP
+.P
+.B holberton - header file
 
-- command_file:  The pathname of a file containing commands. If the
-                 pathname contains one or more <slash> characters, the
-                 implementation attempts to read that file; the file
-                 need not be executable. If the pathname does not
-                 contain a <slash> character:
+.P
+.B _printf - simple function to mimic features of printf
 
-		 *   The implementation shall attempt to read that file
-                     from the current working directory; the file need
-                     not be executable.
+.P
+.B parse - contains function to parse tokens and a function to free memory
 
-		 *   If the file is not in the current working
-                     directory, the implementation may perform a search
-                     for an executable file using the value of PATH.
+.P
+.B path - functions to handle the PATH
 
-.SH INVOCATION 
+.P
+.B simpleshell - main function to start and use shell
 
-.TP
-Compile simple_shell with the GNU Compiler Collection, using gcc and the warnings.
-.B gcc -Wall -Werror -Wextra -pedantic *.c -o simple_shell
+.P
+.B strtools - helper tools
 
-.SH EXAMPLES
+.P
+.B strtools2 - more helper tools
 
-.RS 1.2i
-.PP
-.I EXAMPLE 1
-.B -
-Run interactive mode, ./simple_shell
-.PP
-.I EXAMPLE 2
-.B -
-Run non-interactive mode, echo "ls" | ./simple_shell
-.RE
-
-.RS 1.2i
-
-
-.SH BUILTINS
-.br
-exit - exit the shell
-.br
-env - prints the environment variables
-.br
-
-.SH RETURN VALUE
-.br
-Return 0 on success, otherwise return the exit value.
-.br
+.SH EXAMPLE
+johndoe@linux:~/simple_shell$ ./hsh
+.P ($)
+.P ($)ls
+.P builtins.c  execute.c  holberton.h  parse.c  path.c  _printf.c  README.md  simpshell.c  strtools2.c  strtools.c
+.P ($)exit
 
 .SH AUTHOR
 .br
 
-Nabil AFFO <nabil.noble01@gmail.com>
+Nabil Affo <nabil.noble01@gmail.com>
 .br
-Abuye Ruby <youreajockey@gmail.com> 
+Abuye Ruby <youreajockey@gmail.com>
 .br
