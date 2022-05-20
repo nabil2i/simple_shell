@@ -1,17 +1,17 @@
 
-0x16. C - Simple Shell.
+# 0x16. C - Simple Shell.
 
 A simple shell project by Ruby Abuye and Nabil AFFO
 
-Compilation:
+# Compilation:
 
 gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
 
 This will compile all the '.c' files and change the output's name to 'hsh'.
 
 
-Authors:
+# Authors:
 
-Ruby Abuye |
+@SamuelRuby | Ruby Abuye
 
-Nabil AFFO  
+@nabil2i | Nabil AFFO  
